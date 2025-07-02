@@ -1,11 +1,13 @@
 # main.py
-from eventos import *
-from participantes import *
-from relatorios import *
-from dados_eventos import eventos
-from dados_participantes import participantes
+
+from eventos import *  # Importa tudo que tá no arquivo de eventos
+from participantes import *  # Importa tudo do arquivo de participantes
+from relatorios import *  # Importa os relatórios
+from dados_eventos import eventos  # Importa a lista de eventos
+from dados_participantes import participantes  # Importa a lista de participantes
 
 def menu():
+    # Dicionário com as opções do menu, cada número chama uma função diferente
     opcoes = {
         '1': lambda: listar_eventos(eventos),
         '2': lambda: listar_participantes_por_evento(eventos, participantes),
@@ -30,17 +32,20 @@ def menu():
 8. Relatórios e Estatísticas
 0. Sair
 """)
-        escolha = input("Escolha uma opção: ")
+        escolha = input("Escolha uma opção: ")  # Pede a opção do usuário
 
         if escolha == '0':
-            print("Encerrando o sistema.")
+            print("Encerrando o sistema.")  # Finaliza o programa
             break
 
-        acao = opcoes.get(escolha)
+        acao = opcoes.get(escolha)  # Pega a função correspondente à opção
         if acao:
-            acao()
+            acao()  # Executa a função
         else:
-            print("Opção inválida. Tente novamente.")
+            print("Opção inválida. Tente novamente.")  # Se digitar algo errado
 
+
+# Essa parte aqui serve pra rodar o menu só se o arquivo for executado direto
+# Não roda se o arquivo for só importado por outro
 if __name__ == "__main__":
     menu()
