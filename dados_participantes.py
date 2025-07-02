@@ -1,26 +1,20 @@
 participantes = [
     {
         'codigo': 'P001',
-        'nome': 'Abner',
-        'email': 'abner@email.com',
-        'preferencias': ['Python', 'IA']
+        'nome': 'Abner Silva',
+        'email': 'abner.silva@email.com',
+        'preferencias': ['Python', 'Análise de Dados']
     },
     {
         'codigo': 'P002',
-        'nome': 'Pedro Lucas',
-        'email': 'pedrolucas@email.com',
-        'preferencias': ['Banco de Dados', 'Back-End']
+        'nome': 'Pedro Silva',
+        'email': 'pedro.silva@email.com',
+        'preferencias': ['Front-End', 'UX/UI']
     },
     {
         'codigo': 'P003',
-        'nome': 'Eduardo',
-        'email': 'eduardo@email.com',
-        'preferencias': ['DevOps', 'Cloud']
-    },
-    {
-        'codigo': 'P004',
-        'nome': 'Geraldo',
-        'email': 'geraldo@email.com',
-        'preferencias': ['Segurança da Informação', 'Redes']
+        'nome': 'Eduardo Leite',
+        'email': 'eduardo.leite@email.com',
+        'preferencias': ['Empreendedorismo', 'Design']
     }
 ]
