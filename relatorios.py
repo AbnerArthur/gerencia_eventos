@@ -31,3 +31,56 @@ def menu_relatorios(eventos, participantes):
             acao()
         else:
             print("Opção inválida.")
+            
+            
+def participante_mais_ativo(eventos, participantes):
+    contagem = {}
+    for evento in eventos:
+        for cod in evento['participantes']:
+            contagem[cod] = contagem.get(cod, 0) + 1
+    if not contagem:
+        print("Nenhuma inscrição registrada.")
+        return
+    mais_ativo = max(contagem, key=contagem.get)
+    for p in participantes:
+        if p['codigo'] == mais_ativo:
+            print(f"Participante mais ativo: {p['nome']} ({contagem[mais_ativo]} inscrições)")
+            return
+
+def tema_mais_comum(eventos):
+    temas = {}
+    for evento in eventos:
+        tema = evento['tema']
+        temas[tema] = temas.get(tema, 0) + 1
+    if not temas:
+        print("Nenhum tema registrado.")
+        return
+    mais_comum = max(temas, key=temas.get)
+    print(f"Tema mais comum: {mais_comum} ({temas[mais_comum]} eventos)")
+
+def total_inscricoes(eventos):
+    total = reduce(lambda acc, e: acc + len(e['participantes']), eventos, 0)
+    print(f"Total de inscrições em eventos: {total}")
+
+def listar_nomes(participantes):
+    nomes = list(map(lambda p: p['nome'], participantes))
+    print("Nomes dos participantes:")
+    for nome in nomes:
+        print("-", nome)
+
+def eventos_com_poucos(eventos):
+    poucos = list(filter(lambda e: len(e['participantes']) < 2, eventos))
+    print("Eventos com menos de dois participantes:")
+    for evento in poucos:
+        print(f"- {evento['nome']}")
+
+def eventos_de_um_participante(eventos):
+    codigo = input("Digite o código do participante: ")
+    relacionados = list(filter(lambda e: codigo in e['participantes'], eventos))
+    if relacionados:
+        print("Eventos em que o participante está inscrito:")
+        for e in relacionados:
+            print(f"- {e['nome']}")
+    else:
+        print("Esse participante não está inscrito em nenhum evento.")
+
