@@ -9,7 +9,7 @@ participantes = [
         'codigo': 'P002',
         'nome': 'Pedro Silva',
         'email': 'pedro.silva@email.com',
-        'preferencias': ['Front-End', 'UX/UI']
+        'preferencias': ['Front-End', 'UX']
     },
     {
         'codigo': 'P003',
