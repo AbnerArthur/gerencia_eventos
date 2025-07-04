@@ -1,12 +1,12 @@
 from datetime import datetime  # Importa pra validar e formatar datas
 
-def listar_eventos(eventos):
+def list_events(eventos):
     print("\n--- Lista de Eventos ---")
     for evento in eventos:
         print(f"Código: {evento['codigo']} | Nome: {evento['nome']} | Data: {evento['data']} | Tema: {evento['tema']}")
 
 
-def adicionar_evento(eventos):
+def add_event(eventos):
     while True:
         # Pede o código do evento e padroniza pra maiúsculo
         codigo = input("Código do evento: ").strip().upper()
@@ -44,7 +44,7 @@ def adicionar_evento(eventos):
     print("Evento adicionado com sucesso!")
 
 
-def remover_evento(eventos):
+def remove_event(eventos):
     # Pede o código do evento a ser removido
     codigo = input("Código do evento a remover: ")
 
@@ -57,7 +57,7 @@ def remover_evento(eventos):
     print("Evento não encontrado.")  # Se não achar o código
 
 
-def listar_participantes_por_evento(eventos, participantes):
+def list_event_participants(eventos, participantes):
     # Pede o código do evento
     codigo = input("Código do evento: ")
 

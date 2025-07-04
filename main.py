@@ -9,12 +9,12 @@ from dados_participantes import participantes  # Importa a lista de participante
 def menu():
     # Dicionário com as opções do menu, cada número chama uma função diferente
     opcoes = {
-        '1': lambda: listar_eventos(eventos),
-        '2': lambda: listar_participantes_por_evento(eventos, participantes),
+        '1': lambda: list_events(eventos),
+        '2': lambda: list_event_participants(eventos, participantes),
         '3': lambda: buscar_participante(participantes),
-        '4': lambda: adicionar_evento(eventos),
+        '4': lambda: add_event(eventos),
         '5': lambda: atualizar_email(participantes),
-        '6': lambda: remover_evento(eventos),
+        '6': lambda: remove_event(eventos),
         '7': lambda: remover_participante(participantes),
         '8': lambda: menu_relatorios(eventos, participantes),
     }
