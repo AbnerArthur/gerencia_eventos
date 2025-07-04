@@ -3,12 +3,12 @@ from functools import reduce  # Importa função útil pra somar listas (tipo um
 def menu_relatorios(eventos, participantes):
     # Dicionário com as opções de relatórios
     opcoes = {
-        '1': lambda: participante_mais_ativo(eventos, participantes),
-        '2': lambda: tema_mais_comum(eventos),
-        '3': lambda: total_inscricoes(eventos),
-        '4': lambda: listar_nomes(participantes),
-        '5': lambda: eventos_com_poucos(eventos),
-        '6': lambda: eventos_de_um_participante(eventos),
+        '1': lambda: most_active_participant(eventos, participantes),
+        '2': lambda: most_common_theme(eventos),
+        '3': lambda: total_registrations(eventos),
+        '4': lambda: list_names(participantes),
+        '5': lambda: events_with_few_participants(eventos),
+        '6': lambda: events_by_participant(eventos),
     }
 
     while True:
@@ -34,7 +34,7 @@ def menu_relatorios(eventos, participantes):
             print("Opção inválida.")  # Se digitar algo errado
 
 
-def participante_mais_ativo(eventos, participantes):
+def most_active_participant(eventos, participantes):
     contagem = {}  # Dicionário pra contar quantas vezes cada participante aparece
 
     for evento in eventos:
@@ -53,7 +53,7 @@ def participante_mais_ativo(eventos, participantes):
             return
 
 
-def tema_mais_comum(eventos):
+def most_common_theme(eventos):
     temas = {}  # Dicionário pra contar os temas
 
     for evento in eventos:
@@ -68,13 +68,13 @@ def tema_mais_comum(eventos):
     print(f"Tema mais comum: {mais_comum} ({temas[mais_comum]} eventos)")
 
 
-def total_inscricoes(eventos):
+def total_registrations(eventos):
     # Soma o total de participantes em todos os eventos
     total = reduce(lambda acc, e: acc + len(e['participantes']), eventos, 0)
     print(f"Total de inscrições em eventos: {total}")
 
 
-def listar_nomes(participantes):
+def list_names(participantes):
     # Pega só os nomes dos participantes
     nomes = list(map(lambda p: p['nome'], participantes))
 
@@ -83,7 +83,7 @@ def listar_nomes(participantes):
         print("-", nome)
 
 
-def eventos_com_poucos(eventos):
+def events_with_few_participants(eventos):
     # Filtra os eventos com menos de 2 pessoas
     poucos = list(filter(lambda e: len(e['participantes']) < 2, eventos))
 
@@ -92,7 +92,7 @@ def eventos_com_poucos(eventos):
         print(f"- {evento['nome']}")
 
 
-def eventos_de_um_participante(eventos):
+def events_by_participant(eventos):
     # Pede o código do participante
     codigo = input("Digite o código do participante: ")
 

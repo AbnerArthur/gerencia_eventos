@@ -1,4 +1,4 @@
-def buscar_participante(participantes):
+def find_participant(participantes):
     # Pede o código do participante, remove espaços e converte para letra maiúscula
     codigo = input("Código do participante: ").strip().upper()
     
@@ -12,7 +12,7 @@ def buscar_participante(participantes):
     print("Participante não encontrado.")
 
 
-def atualizar_email(participantes):
+def update_email(participantes):
     # Solicita o código e padroniza (remove espaços e transforma em maiúsculas)
     codigo = input("Código do participante: ").strip().upper()
     
@@ -34,7 +34,7 @@ def atualizar_email(participantes):
     print("Participante não encontrado.")  # Se nenhum participante foi encontrado
 
 
-def remover_participante(participantes):
+def remove_participant(participantes):
     # Pede o código do participante e padroniza
     codigo = input("Código do participante a remover: ").strip().upper()
     

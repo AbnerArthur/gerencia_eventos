@@ -11,11 +11,11 @@ def menu():
     opcoes = {
         '1': lambda: list_events(eventos),
         '2': lambda: list_event_participants(eventos, participantes),
-        '3': lambda: buscar_participante(participantes),
+        '3': lambda: find_participant(participantes),
         '4': lambda: add_event(eventos),
-        '5': lambda: atualizar_email(participantes),
+        '5': lambda: update_email(participantes),
         '6': lambda: remove_event(eventos),
-        '7': lambda: remover_participante(participantes),
+        '7': lambda: remove_participant(participantes),
         '8': lambda: menu_relatorios(eventos, participantes),
     }
 
